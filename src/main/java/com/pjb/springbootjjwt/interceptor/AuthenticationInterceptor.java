@@ -69,9 +69,9 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                     //糊涂工具json字符串转对象
                     User user = JSONUtil.toBean(audience.get(0), User.class);
                     System.out.println(user);
-                    System.out.println(JWT.decode(token).getAudience());
-                    System.out.println(JWT.decode(token).getAudience().get(0));
-                    userId = JWT.decode(token).getAudience().get(0);
+                    System.out.println(JWT.decode(token).getAudience());System.out.println(JWT.decode(token).getAudience().get(0));
+                    userId
+                     = JWT.decode(token).getAudience().get(0);
                 } catch (JWTDecodeException j) {
                     throw new RuntimeException("401,token错误");
                 }
